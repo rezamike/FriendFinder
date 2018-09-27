@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
 
 </head>
 
@@ -20,14 +22,13 @@
     <div class="container">
 
         <div class="jumbotron">
-            <h1 class="text-center"><span class="fa fa-fire"></span> Hot Restaurant</h1>
+            <h1 class="text-center"><span class="fa fa-fire"></span> FriendFinder</h1>
             <hr>
             <br>
 
-           
 
-        </div>
- <div class="input-field col s12">
+
+            <div class="input-field col s12">
                 <select>
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">Option 1</option>
@@ -40,19 +41,19 @@
             <br>
 
 
-        <footer class="footer">
-            <div class="container">
-                <p><a href="/api/friends">API Friends Link</a></p>
-            </div>
-        </footer>
+            <footer class="footer">
+                <div class="container">
+                    <p><a href="/api/friends">API Friends Link</a></p>
+                </div>
+            </footer>
 
-    </div>
+        </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('select');
-        });
-    </script>
+        <script>
+            $(document).ready(function () {
+                $('select').formSelect();
+            });
+        </script>
 
 </body>
 
