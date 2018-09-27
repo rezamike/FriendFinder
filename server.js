@@ -1,8 +1,8 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-let inquirer = require("inquirer");
-let request = require("request");
-let mysql = require("mysql");
+var inquirer = require("inquirer");
+var request = require("request");
+var mysql = require("mysql");
 var path = require("path");
 
 var app = express();
