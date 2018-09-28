@@ -27,8 +27,44 @@
             <hr>
             <br>
 
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="icon_prefix name" type="text" class="validate">
+                        <label for="icon_prefix">Name</label>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <br>
 
+            <form action="#">
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>Image Upload</span>
+                        <input type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input id="photo" class="file-path validate" type="text">
+                    </div>
+                </div>
+            </form>
+            <br>
+            <br>
 
+            <div class="input-field col s12">
+                <select>
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">Blue</option>
+                    <option value="2">The What?</option>
+                    <option value="3">Who cares...</option>
+                    <option value="4">Gray</option>
+                </select>
+                <label>What color is the Tardis?</label>
+            </div>
+            <br>
+            <br>
             <div class="input-field col s12">
                 <select>
                     <option value="" disabled selected>Choose your option</option>
@@ -40,22 +76,157 @@
             </div>
             <br>
             <br>
-
-
-            <footer class="footer">
-                <div class="container">
-                    <p><a href="/api/friends">API Friends Link</a></p>
-                </div>
-            </footer>
-
+            <div class="input-field col s12">
+                <select>
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+                <label>Materialize Select</label>
+            </div>
+            <br>
+            <br>
+            <div class="input-field col s12">
+                <select>
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+                <label>Materialize Select</label>
+            </div>
+            <br>
+            <br>
+            <div class="input-field col s12">
+                <select>
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+                <label>Materialize Select</label>
+            </div>
+            <br>
+            <br>
+            <div class="input-field col s12">
+                <select>
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+                <label>Materialize Select</label>
+            </div>
+            <br>
+            <br>
+            <div class="input-field col s12">
+                <select>
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+                <label>Materialize Select</label>
+            </div>
+            <br>
+            <br>
+            <div class="input-field col s12">
+                <select>
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+                <label>Materialize Select</label>
+            </div>
+            <br>
+            <br>
+            <div class="input-field col s12">
+                <select>
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+                <label>Materialize Select</label>
+            </div>
+            <br>
+            <br>
+            <div class="input-field col s12">
+                <select>
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+                <label>Materialize Select</label>
+            </div>
+            <br>
+            <br>
+            <div class="text-center">
+                <button id="submit" class="waves-effect waves-light btn-large"><i class="material-icons left">assignment_turned_in</i>Submit</button>
+            </div>
         </div>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                var elems = document.querySelectorAll('select');
-                var instances = M.FormSelect.init(elems);
-            });
-        </script>
+        <footer class="footer">
+            <div class="container">
+                <p><a href="/api/friends">API Friends Link</a></p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems);
+
+            $("#submit").on("click", function (event) {
+                event.preventDefault();
+
+                function scoreResponse(count, id) {
+                    var arr = [];
+                    for (var counter = 0; counter <= count; counter++) {
+                        arr.push({
+                            'src': 'css/images/pictures/gal_' + id + '/' + counter + '.jpg',
+                            'thumb': 'css/images/thumbnails/gal_' + id + '/' + counter + '.jpg'
+                        });
+                    }
+                    return arr;
+                };
+
+                var newFriend = {
+                    name: $("#name").val().trim(),
+                    photo: $("#photo").val().trim(),
+            };
+
+            console.log("poop");
+
+            $.post("/api/friends", newFriend,
+                function (data) {
+
+                    // If a table is available... tell user they are booked.
+                    if (data) {
+                        alert("Yay! You are officially booked!");
+                    }
+
+                    // If a table is available... tell user they on the waiting list.
+                    else {
+                        alert("Sorry you are on the wait list");
+                    }
+
+                    // Clear the form when submitting
+                    $("#reserve-name").val("");
+                    $("#reserve-phone").val("");
+                    $("#reserve-email").val("");
+                    $("#reserve-unique-id").val("");
+
+                });
+
+        });
+        });
+    </script>
 
 </body>
 
