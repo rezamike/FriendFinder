@@ -53,7 +53,7 @@
             <br>
             <br>
 
-            <div class="input-field col s12">
+            <div id="ques1" class="input-field col s12">
                 <select>
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">Blue</option>
@@ -65,107 +65,125 @@
             </div>
             <br>
             <br>
-            <div class="input-field col s12">
+            <div id="ques2" class="input-field col s12">
                 <select>
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">Option 1</option>
                     <option value="2">Option 2</option>
                     <option value="3">Option 3</option>
+                    <option value="4">Gray</option>
                 </select>
                 <label>Materialize Select</label>
             </div>
             <br>
             <br>
-            <div class="input-field col s12">
+            <div id="ques3" class="input-field col s12">
                 <select>
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">Option 1</option>
                     <option value="2">Option 2</option>
                     <option value="3">Option 3</option>
+                    <option value="4">Gray</option>
                 </select>
                 <label>Materialize Select</label>
             </div>
             <br>
             <br>
-            <div class="input-field col s12">
+            <div id="ques4" class="input-field col s12">
                 <select>
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">Option 1</option>
                     <option value="2">Option 2</option>
                     <option value="3">Option 3</option>
+                    <option value="4">Gray</option>
                 </select>
                 <label>Materialize Select</label>
             </div>
             <br>
             <br>
-            <div class="input-field col s12">
+            <div id="ques5" class="input-field col s12">
                 <select>
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">Option 1</option>
                     <option value="2">Option 2</option>
                     <option value="3">Option 3</option>
+                    <option value="4">Gray</option>
                 </select>
                 <label>Materialize Select</label>
             </div>
             <br>
             <br>
-            <div class="input-field col s12">
+            <div id="ques6" class="input-field col s12">
                 <select>
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">Option 1</option>
                     <option value="2">Option 2</option>
                     <option value="3">Option 3</option>
+                    <option value="4">Gray</option>
                 </select>
                 <label>Materialize Select</label>
             </div>
             <br>
             <br>
-            <div class="input-field col s12">
+            <div id="ques7" class="input-field col s12">
                 <select>
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">Option 1</option>
                     <option value="2">Option 2</option>
                     <option value="3">Option 3</option>
+                    <option value="4">Gray</option>
                 </select>
                 <label>Materialize Select</label>
             </div>
             <br>
             <br>
-            <div class="input-field col s12">
+            <div id="ques8" class="input-field col s12">
                 <select>
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">Option 1</option>
                     <option value="2">Option 2</option>
                     <option value="3">Option 3</option>
+                    <option value="4">Gray</option>
                 </select>
                 <label>Materialize Select</label>
             </div>
             <br>
             <br>
-            <div class="input-field col s12">
+            <div id="ques9" class="input-field col s12">
                 <select>
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">Option 1</option>
                     <option value="2">Option 2</option>
                     <option value="3">Option 3</option>
+                    <option value="4">Gray</option>
                 </select>
                 <label>Materialize Select</label>
             </div>
             <br>
             <br>
-            <div class="input-field col s12">
+            <div id="ques10" class="input-field col s12">
                 <select>
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">Option 1</option>
                     <option value="2">Option 2</option>
                     <option value="3">Option 3</option>
+                    <option value="4">Gray</option>
                 </select>
                 <label>Materialize Select</label>
             </div>
             <br>
             <br>
             <div class="text-center">
-                <button id="submit" class="waves-effect waves-light btn-large"><i class="material-icons left">assignment_turned_in</i>Submit</button>
+                <a id="submit" class="waves-effect waves-light btn-large btn modal-trigger" href="#modal1"><i class="material-icons left">assignment_turned_in</i>Submit</a>
+            </div>
+        </div>
+        <div id="modal1" class="modal bottom-sheet">
+            <div class="modal-content">
+                <h4>Matches</h4>
+                <p>A bunch of text</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
             </div>
         </div>
 
@@ -184,46 +202,77 @@
 
             $("#submit").on("click", function (event) {
                 event.preventDefault();
+                var currentInput = {
+                    name: "",
+                    photo: "",
+                    scores: [],
+                }
+                var nameInput = $("#name").val();
+                var photoInput = $("photo").val();
 
-                function scoreResponse(count, id) {
-                    var arr = [];
-                    for (var counter = 0; counter <= count; counter++) {
-                        arr.push({
-                            
-                        });
+                var answer1 = parseInt($("#ques1").val());
+                var answer2 = parseInt($("#ques2").val());
+                var answer3 = parseInt($("#ques3").val());
+                var answer4 = parseInt($("#ques4").val());
+                var answer5 = parseInt($("#ques5").val());
+                var answer6 = parseInt($("#ques6").val());
+                var answer7 = parseInt($("#ques7").val());
+                var answer8 = parseInt($("#ques8").val());
+                var answer9 = parseInt($("#ques9").val());
+                var answer10 = parseInt($("#ques10").val());
+
+                currentInput.name = nameInput;
+                currentInput.photo = photoInput;
+
+                currentInput.scores.push(answer1)
+                currentInput.scores.push(answer2)
+                currentInput.scores.push(answer3)
+                currentInput.scores.push(answer4)
+                currentInput.scores.push(answer5)
+                currentInput.scores.push(answer6)
+                currentInput.scores.push(answer7)
+                currentInput.scores.push(answer8)
+                currentInput.scores.push(answer9)
+                currentInput.scores.push(answer10)
+
+                $.get("/api/friends", function (friends) {
+                    var friendArray = [];
+
+                    for (var i = 0; i < friends.length; i++) {
+                        var score = friends[i].scores;
+                        var total = 0;
+
+                        for (var j = 0; j < score.length; j++) {
+                            total += Math.abs(currentInput.scores[j] - score[j]);
+
+                        }
+                        friendArray.push(total);
+
                     }
-                    return arr;
-                };
+                    var p = indexOfSmallest(friendArray);
+                    var friendPhoto = friends[p].photo;
+                    var friendName = friends[p].name;
 
-                var newFriend = {
-                    name: $("#name").val().trim(),
-                    photo: $("#photo").val().trim(),
-            };
+                    $(".modal-body").html(`<h1>${friendName}</h1>`)
+                    var friendPhotoURL = $(`<br> <img src=${friendPhoto} id="ugly-photo">`)
 
-            console.log("poop");
+                    $(".modal-body").append(friendPhotoURL);
 
-            $.post("/api/friends", newFriend,
-                function (data) {
-
-                    // If a table is available... tell user they are booked.
-                    if (data) {
-                        alert("Yay! You are officially booked!");
-                    }
-
-                    // If a table is available... tell user they on the waiting list.
-                    else {
-                        alert("Sorry you are on the wait list");
-                    }
-
-                    // Clear the form when submitting
-                    $("#reserve-name").val("");
-                    $("#reserve-phone").val("");
-                    $("#reserve-email").val("");
-                    $("#reserve-unique-id").val("");
-
+                    function indexOfSmallest(a) {
+                        var lowest = 0;
+                        for (var i = 1; i < a.length; i++) {
+                            if (a[i] < a[lowest]) {
+                                lowest = i;
+                            }
+                            return lowest;
+                        }
+                    };
+                    $.post("api/friends", currentInput);
+                    $(document.body).click(function () {
+                        location.href = "/";
+                    });
                 });
-
-        });
+            });
         });
     </script>
 
