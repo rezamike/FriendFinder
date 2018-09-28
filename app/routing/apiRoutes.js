@@ -7,6 +7,8 @@ module.exports = function(app) {
     });
   
     app.post("/api/friends", function(req, res) {
+        //add code to push into your static database
+        //i.e. friends.push(req.body) or something like that
         res.json(friends);
     });
   

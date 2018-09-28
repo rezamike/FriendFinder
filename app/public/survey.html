@@ -237,7 +237,6 @@
 
                 $.get("/api/friends", function (friends) {
                     var friendArray = [];
-
                     for (var i = 0; i < friends.length; i++) {
                         var score = friends[i].scores;
                         var total = 0;
@@ -250,6 +249,7 @@
 
                     }
                     var p = indexOfSmallest(friendArray);
+                    console.log(p);
                     var friendPhoto = friends[p].photo;
                     var friendName = friends[p].name;
 
@@ -260,13 +260,14 @@
 
                     function indexOfSmallest(a) {
                         var lowest = 0;
-                        for (var i = 1; i < a.length; i++) {
+                        for (var i = 0; i < a.length; i++) {
                             if (a[i] < a[lowest]) {
                                 lowest = i;
                             }
                             return lowest;
                         }
                     };
+                    // $("#modal1").modal("show"); write your show modal code here
                     $.post("api/friends", currentInput);
                     $(document.body).click(function () {
                         location.href = "/";
